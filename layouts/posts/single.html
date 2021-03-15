@@ -6,6 +6,9 @@
     <article>
       <header>
         <div class="post-title">
+        {{ if .Params.featuredImage }}
+        <img src='{{ .Params.featuredImage }}' alt="Featured image"/>
+        {{ end }}
           <h1 class="title">
             <a class="title-link" href="{{ .Permalink | safeURL }}">
               {{ .Title }}
@@ -32,9 +35,6 @@
       </header>
 
       <div>
-        {{ if .Params.featuredImage }}
-          <img src='{{ .Params.featuredImage }}' alt="Featured image"/>
-        {{ end }}
         {{ .Content }}
       </div>
 
